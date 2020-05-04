@@ -10,20 +10,16 @@ $(document).ready(function (){
 
   var inputSearch = $("#search");
   var btnSearch = $("#search-btn");
-  var query = inputSearch.val().toLowerCase().trim();
   
-
-
+  
   btnSearch.click(function() {
-    query = inputSearch.val().toLowerCase().trim();
-    apiCercaFilm(query, template,inputSearch); 
+    apiCercaFilm(inputSearch,template); 
   })
 
   inputSearch.keyup(function(event) {
-    query = inputSearch.val().toLowerCase().trim();
 
     if(event.which === 13){
-      apiCercaFilm(query, template,inputSearch);
+      apiCercaFilm(inputSearch,template);
     }
   })
   
@@ -35,9 +31,10 @@ $(document).ready(function (){
 */
 
 
-function apiCercaFilm (query, template,inputSearch) {
+function apiCercaFilm (inputSearch,template) {
   
   var lista = $(".films");
+  var query = inputSearch.val().toLowerCase().trim();
 
   $.ajax({
     url: "https://api.themoviedb.org/3/search/movie",
@@ -62,8 +59,7 @@ function apiCercaFilm (query, template,inputSearch) {
         }
 
         lista.append( template(film));
-        
-        //inputSearch.val("")
+        inputSearch.empty("")
       }
     },
     error: function(){
