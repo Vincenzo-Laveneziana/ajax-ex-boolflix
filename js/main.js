@@ -10,15 +10,21 @@ $(document).ready(function (){
 
   var inputSearch = $("#search");
   var btnSearch = $("#search-btn");
+  var query = inputSearch.val().toLowerCase().trim();
   
 
 
   btnSearch.click(function() {
-    
-    var query = inputSearch.val();
+    query = inputSearch.val().toLowerCase().trim();
+    apiCercaFilm(query, template,inputSearch); 
+  })
 
-    apiCercaFilm(query, template);
-    
+  inputSearch.keyup(function(event) {
+    query = inputSearch.val().toLowerCase().trim();
+
+    if(event.which === 13){
+      apiCercaFilm(query, template,inputSearch);
+    }
   })
   
 });//fine ready
@@ -29,7 +35,7 @@ $(document).ready(function (){
 */
 
 
-function apiCercaFilm (query, template) {
+function apiCercaFilm (query, template,inputSearch) {
   
   var lista = $(".films");
 
@@ -43,7 +49,7 @@ function apiCercaFilm (query, template) {
     },
     success: function(res){
       lista.html("");
-
+      
       var datiFilm = res.results;
       
       for(var i = 0; i < datiFilm.length; i++){
@@ -56,10 +62,13 @@ function apiCercaFilm (query, template) {
         }
 
         lista.append( template(film));
+        
+        //inputSearch.val("")
       }
     },
     error: function(){
       console.log("Errore Api");
     }
-  })
+  });
+
 }
