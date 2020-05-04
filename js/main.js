@@ -2,7 +2,7 @@ $(document).ready(function (){
 
   //handlebars
   var source = $("#handlebars-template").html();
-  console.log(source);
+  //console.log(source);
   var template = Handlebars.compile(source);
   
 
@@ -12,11 +12,11 @@ $(document).ready(function (){
   var btnSearch = $("#search-btn");
   
   
-  btnSearch.click(function() {
+  btnSearch.click(function(){
     apiCercaFilm(inputSearch,template); 
   })
 
-  inputSearch.keyup(function(event) {
+  inputSearch.keyup(function(event){
 
     if(event.which === 13){
       apiCercaFilm(inputSearch,template);
@@ -31,7 +31,7 @@ $(document).ready(function (){
 */
 
 
-function apiCercaFilm (inputSearch,template) {
+function apiCercaFilm (inputSearch,template){
   
   var lista = $(".films");
   var query = inputSearch.val().toLowerCase().trim();
@@ -51,7 +51,7 @@ function apiCercaFilm (inputSearch,template) {
       
       for(var i = 0; i < datiFilm.length; i++){
         
-        var film = {
+        var film ={
           title: datiFilm[i].title,
           originalTitle: datiFilm[i].original_title,
           originalLanguage: datiFilm[i].original_language,
