@@ -6,4 +6,9 @@
 
 body{
   font-family: 'Open Sans', sans-serif;
+  padding: 30px;
+}
+
+ul{
+  margin-bottom: 15px;
 }

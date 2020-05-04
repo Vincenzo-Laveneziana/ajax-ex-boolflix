@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Titolo e icona -->
-  <title>Titolo</title>
+  <title>Boolflix</title>
   <link rel="icon" href="">
 
   <!-- Font -->
@@ -21,22 +21,26 @@
 
 <body>
 
+  <div class="div-search">
+    <input id="search" type="text" placeholder="Cerca un film">
+    <button id="search-btn" >Cerca Film</button>
+  </div>
 
 
+  <div class="films">
+    
+  </div>
 
-
-
-                                                                                                           
+                       
 
   <!-- Template -->
   <script id="handlebars-template" type="text/x-handlebars-template">
-    <!--   linea guida
-    <div>
-      <div class="message {{userClass}}">
-      <div class="message-text">{{testo}}</div>
-      <div class="message-time">{{ora}}</div>
+    <ul class="cover-film">
+      <li class="title">Titolo: {{ title }}</li>
+      <li class="original-title">Titolo originale: {{ originalTitle }}</li>
+      <li class="original-language">Lingua originale: {{ originalLanguage }}</li>
+      <li class="vote-average">Voto medio: {{ voteAverage }}</li>
     </div> 
-    -->
   </script>
 
   <!-------------------- JS -------------------->
