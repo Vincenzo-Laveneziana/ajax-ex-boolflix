@@ -35,12 +35,15 @@
 
   <!-- Template -->
   <script id="handlebars-template" type="text/x-handlebars-template">
-    <ul class="cover-film">
-      <li class="title">Titolo: {{ title }}</li>
-      <li class="original-title">Titolo originale: {{ originalTitle }}</li>
-      <li class="original-language">Lingua originale: {{ originalLanguage }}</li>
-      <li class="vote-average">Voto medio: {{ voteAverage }}</li>
-    </div> 
+    <div class="cover-film">
+      <ul class="cover-film-details">
+        <li class="title">Titolo: {{ title }}</li>
+        <li class="original-title">Titolo originale: {{ originalTitle }}</li>
+        <li class="original-language">Lingua originale: {{ originalLanguage }}</li>
+        <li class="vote-average">Voto medio: {{ voteAverage }}</li>
+      </ul> 
+    </div>
+    
   </script>
 
   <!-------------------- JS -------------------->
