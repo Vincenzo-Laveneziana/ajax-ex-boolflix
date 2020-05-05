@@ -2,11 +2,11 @@
 
 :man_student:--Task: 
 
-To view the tasks click: <a href="Task.pdf">Here</a>
+To view the task click: <a href="Task.pdf">Here</a>
 
  ​ ​ :desktop_computer: Project Preview:
 
- ​ ​ <img src="img/Cattura.PNG" width= "1000px">
+ ​ ​    <img src="img/Cattura.png" width= "800px">
 
 
 #

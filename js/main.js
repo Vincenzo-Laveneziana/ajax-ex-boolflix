@@ -59,7 +59,7 @@ function apiCercaSerieTv(inputSearch,template){
             var film ={
               title: datiFilm.name,
               originalTitle: datiFilm.original_name,
-              originalLanguage: datiFilm.original_language,
+              originalLanguage: bandiera(datiFilm.original_language),
               voteAverage: votoStelle(datiFilm.vote_average),
               tipoSerie : "serie-tv"
             }
@@ -108,7 +108,7 @@ function apiCercaFilm (inputSearch,template){
             var film ={
               title: datiFilm.title,
               originalTitle: datiFilm.original_title,
-              originalLanguage: datiFilm.original_language,
+              originalLanguage: bandiera(datiFilm.original_language),
               voteAverage: votoStelle(datiFilm.vote_average),
               tipoSerie : "film"
             }
@@ -146,4 +146,16 @@ function votoStelle(voto){
   }
 
   return aggiungiStella;
+}
+
+function bandiera(lingua){
+  var aggiungiBandiera = "";
+  
+  if(lingua == "en" || lingua == "it"){
+    aggiungiBandiera = '<img class="flag" src="'+ "img/" + lingua + ".svg" + '" alt="' + lingua + '">';
+    return aggiungiBandiera;
+  }else{
+    return lingua;
+  }
+
 }
