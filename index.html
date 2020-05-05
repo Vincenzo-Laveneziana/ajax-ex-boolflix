@@ -21,15 +21,20 @@
 
 <body>
 
-  <div class="div-search">
-    <input id="search" type="text" placeholder="Cerca un film">
-    <button id="search-btn" >Cerca Film</button>
-  </div>
-
-
-  <div class="films">
+  <header>
+    <div class="div-search">
+      <input id="search" type="text" placeholder="Cerca un film">
+      <button id="search-btn" >Cerca Film</button>
+    </div>
+  </header>
+  
+  <main>
+    <div class="films">
     
-  </div>
+    </div>
+  </main>
+
+  
 
                        
 
@@ -37,10 +42,26 @@
   <script id="handlebars-template" type="text/x-handlebars-template">
     <div class="cover-film">
       <ul class="cover-film-details">
-        <li class="title">Titolo: {{ title }}</li>
-        <li class="original-title">Titolo originale: {{ originalTitle }}</li>
-        <li class="original-language">Lingua originale: {{ originalLanguage }}</li>
-        <li class="vote-average">Voto medio: {{ voteAverage }}</li>
+        <li class="title">
+           <span>Titolo: </span>
+           <span>{{ title }}</span>
+        </li>
+        <li class="original-title">
+          <span>Titolo originale: </span>
+          <span>{{ originalTitle }}</span>
+        </li>
+        <li class="original-language">
+          <span>Lingua originale: </span>
+          <span>{{ originalLanguage }}</span>
+        </li>
+        <li class="vote-average">
+          <span>Voto medio: </span>
+          <span>{{{ voteAverage }}}</span>
+        </li>
+        <li class="tipo-serie">
+          <span>tipo: </span>
+          <span>{{ tipoSerie }}</span>
+        </li>
       </ul> 
     </div>
     

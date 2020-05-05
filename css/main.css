@@ -10,6 +10,18 @@ body{
   background: lightgrey;
 }
 
+
+
+/* Header */
+
+.no-search{
+  padding: 10px;
+  font-size: 12px;
+  background: green;
+  border-radius: 10px;
+}
+
 ul{
   margin-bottom: 15px;
 }
+
