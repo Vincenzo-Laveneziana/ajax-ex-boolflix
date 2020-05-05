@@ -8,10 +8,12 @@ $(document).ready(function (){
   var inputSearch = $("#search");
   var btnSearch = $("#search-btn");
   var lista = $(".films");
+  var resultTV = $(".tv-series");
+  var resultFilm = $(".film-series");
   
   //al click
   btnSearch.click(function(){
-    pulisciRisultati(lista);
+    pulisciRisultati(lista,resultTV,resultFilm);
     apiCercaSerieTv(inputSearch,template,lista);
     apiCercaFilm(inputSearch,template,lista);    
   })
@@ -20,7 +22,7 @@ $(document).ready(function (){
   inputSearch.keyup(function(event){
 
     if(event.which === 13){
-      pulisciRisultati(lista);
+      pulisciRisultati(lista,resultTV,resultFilm);
       apiCercaSerieTv(inputSearch,template,lista);
       apiCercaFilm(inputSearch,template,lista);
     }
@@ -67,7 +69,7 @@ function apiCercaSerieTv(inputSearch,template,lista){
           })
 
         }else{
-          alert("nessuna serie tv trovata")
+          $(".tv-series").text("Nessuna serie tv trovata")
         }
       },
       error: function(){
@@ -112,7 +114,7 @@ function apiCercaFilm (inputSearch,template,lista){
           })
 
         }else{
-          alert("nessun film trovato")
+          $(".film-series").text("Nessun film trovato")
         }
       },
       error: function(){
@@ -154,6 +156,8 @@ function bandiera(lingua){
 
 }
 
-function pulisciRisultati(contenitore){
+function pulisciRisultati(contenitore, risultatiTv, risultatiFilm){
   contenitore.html("");
+  risultatiTv.html("");
+  risultatiFilm.html("");
 }
