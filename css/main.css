@@ -10,7 +10,10 @@ body{
   background: lightgrey;
 }
 
-
+/* Utility */
+.fas{
+  color: #ffd35b;
+}
 
 /* Header */
 

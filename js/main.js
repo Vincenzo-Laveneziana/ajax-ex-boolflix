@@ -8,21 +8,20 @@ $(document).ready(function (){
   var inputSearch = $("#search");
   var btnSearch = $("#search-btn");
   
-  
+  //al click
   btnSearch.click(function(){
    
     apiCercaSerieTv(inputSearch,template);
-    apiCercaFilm(inputSearch,template); 
-    
+    apiCercaFilm(inputSearch,template);    
   })
 
+  //alla pressione del tasto invio
   inputSearch.keyup(function(event){
 
     if(event.which === 13){
       
       apiCercaSerieTv(inputSearch,template);
       apiCercaFilm(inputSearch,template);
-      
     }
   })
   
@@ -41,7 +40,6 @@ function apiCercaSerieTv(inputSearch,template){
 
     var lista = $(".films");
     var query = inputSearch.val().toLowerCase().trim();
-    //console.log("chiamata api");
     
     $.ajax({
       url: "https://api.themoviedb.org/3/search/tv",
@@ -54,7 +52,6 @@ function apiCercaSerieTv(inputSearch,template){
       success: function(res){
         lista.html("");
         
-
         if(res.results.length > 0){
 
             //sperimento foreach
@@ -84,7 +81,6 @@ function apiCercaSerieTv(inputSearch,template){
 }//fine apiCercaSerieTv
 
 
-
 //cerca film
 function apiCercaFilm (inputSearch,template){
   console.log("chiamata film");
@@ -93,7 +89,6 @@ function apiCercaFilm (inputSearch,template){
 
     var lista = $(".films");
     var query = inputSearch.val().toLowerCase().trim();
-    //console.log("chiamata api");
     
     $.ajax({
       url: "https://api.themoviedb.org/3/search/movie",
@@ -106,7 +101,6 @@ function apiCercaFilm (inputSearch,template){
       success: function(res){
         //lista.html("");
         
-
         if(res.results.length > 0){
 
             //sperimento foreach
@@ -126,7 +120,6 @@ function apiCercaFilm (inputSearch,template){
         }else{
           alert("nessun film trovato")
         }
-        
       },
       error: function(){
         console.log("Errore Api");
@@ -137,9 +130,20 @@ function apiCercaFilm (inputSearch,template){
 
 
 function votoStelle(voto){
-  
-  //arrotonamento per eccesso
-  var voto = Math.round(voto*0.5);
+  var stellaPiena = '<i class="fas fa-star"></i>';
+  var stellaVuota = '<i class="far fa-star"></i>';
+  var aggiungiStella = "";
 
-  return voto;
+  //arrotonamento per eccesso
+  voto = Math.ceil(voto*0.5);
+
+  for( var i = 0; i < 5 ; i++){
+    if(voto > i){
+      aggiungiStella += stellaPiena; 
+    }else{
+      aggiungiStella += stellaVuota;
+    }
+  }
+
+  return aggiungiStella;
 }

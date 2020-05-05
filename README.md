@@ -2,7 +2,7 @@
 
 :man_student:--Task: 
 
-[Task.pdf]: 
+To view the tasks click: <a href="Task.pdf">Here</a>
 
  ​ ​ :desktop_computer: Project Preview:
 
