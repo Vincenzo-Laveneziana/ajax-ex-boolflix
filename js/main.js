@@ -7,21 +7,22 @@ $(document).ready(function (){
   //referenze
   var inputSearch = $("#search");
   var btnSearch = $("#search-btn");
+  var lista = $(".films");
   
   //al click
   btnSearch.click(function(){
-   
-    apiCercaSerieTv(inputSearch,template);
-    apiCercaFilm(inputSearch,template);    
+    pulisciRisultati(lista);
+    apiCercaSerieTv(inputSearch,template,lista);
+    apiCercaFilm(inputSearch,template,lista);    
   })
 
   //alla pressione del tasto invio
   inputSearch.keyup(function(event){
 
     if(event.which === 13){
-      
-      apiCercaSerieTv(inputSearch,template);
-      apiCercaFilm(inputSearch,template);
+      pulisciRisultati(lista);
+      apiCercaSerieTv(inputSearch,template,lista);
+      apiCercaFilm(inputSearch,template,lista);
     }
   })
   
@@ -33,12 +34,11 @@ $(document).ready(function (){
 */
 
 //cerca serie tv
-function apiCercaSerieTv(inputSearch,template){
+function apiCercaSerieTv(inputSearch,template,lista){
   console.log("chiamata serie tv");
   
   if(inputSearch.val() != "" ){
 
-    var lista = $(".films");
     var query = inputSearch.val().toLowerCase().trim();
     
     $.ajax({
@@ -50,11 +50,9 @@ function apiCercaSerieTv(inputSearch,template){
         query: query
       },
       success: function(res){
-        lista.html("");
         
         if(res.results.length > 0){
 
-            //sperimento foreach
           res.results.forEach(function(datiFilm){
             var film ={
               title: datiFilm.name,
@@ -71,7 +69,6 @@ function apiCercaSerieTv(inputSearch,template){
         }else{
           alert("nessuna serie tv trovata")
         }
-        
       },
       error: function(){
         console.log("Errore Api");
@@ -82,12 +79,11 @@ function apiCercaSerieTv(inputSearch,template){
 
 
 //cerca film
-function apiCercaFilm (inputSearch,template){
+function apiCercaFilm (inputSearch,template,lista){
   console.log("chiamata film");
   
   if(inputSearch.val() != "" ){
 
-    var lista = $(".films");
     var query = inputSearch.val().toLowerCase().trim();
     
     $.ajax({
@@ -99,11 +95,9 @@ function apiCercaFilm (inputSearch,template){
         query: query
       },
       success: function(res){
-        //lista.html("");
         
         if(res.results.length > 0){
 
-            //sperimento foreach
           res.results.forEach(function(datiFilm){
             var film ={
               title: datiFilm.title,
@@ -158,4 +152,8 @@ function bandiera(lingua){
     return lingua;
   }
 
+}
+
+function pulisciRisultati(contenitore){
+  contenitore.html("");
 }
