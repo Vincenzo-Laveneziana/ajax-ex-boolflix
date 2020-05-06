@@ -6,7 +6,7 @@
 
   <!-- Titolo e icona -->
   <title>Boolflix</title>
-  <link rel="icon" href="">
+  <link rel="icon" href="https://fontmeme.com/permalink/200506/9e16ddb4bda40432b441eb1bb5eba42e.png">
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
@@ -25,11 +25,16 @@
 
     <div class="head flex">
       <img src="https://fontmeme.com/permalink/200506/9cc48dd813e593f4f30d39a221d1dc17.png" alt="netflix-font">
- 
-      <div class="div-search">
-        <input id="search" type="text" placeholder="Cerca un film">
-        <button id="search-btn" >Cerca Film</button>
+      
+      <div class="container-search">
+        <div class="div-search">
+
+          <input id="search" type="text" placeholder="Cerca un film">
+          <i id="search-btn" class="fa fa-search"></i>
+          
+        </div>
       </div>
+      
     </div>
     
    
@@ -44,15 +49,15 @@
     <div class="films">
 
       <div class="cover-film">
-        <img classe="cover-img" src="https://image.tmdb.org/t/p/w342//ycxWyYm5li51say11DJziMaCZMz.jpg" alt="Hulk">
-        <ul class="cover-film-details ">
+        <img classe="cover-img" src="https://image.tmdb.org/t/p/w342//lwfWEEg3rucIwbbKAlPaZn3OCM9.jpg" alt="Iron Man 3">
+        <ul class="cover-film-details hide">
           <li class="title">
-             <span>Titolo: </span>
-             <span>Hulk</span>
+             <h6>Titolo: </h6>
+             <span>Iron Man 3</span>
           </li>
           <li class="original-title">
-            <span>Titolo originale: </span>
-            <span>Hulk</span>
+            <h6>Titolo originale: </h6>
+            <span>Iron Man 3</span>
           </li>
           <li class="original-language">
             <span>Lingua: </span>
@@ -60,28 +65,29 @@
           </li>
           <li class="vote-average">
             <span>Voto: </span>
-            <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span>
+            <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
           </li>
           <li class="tipo-serie">
-            <span>tipo: </span>
+            <h6>tipo: </h6>
             <span>Film</span>
           </li>
           <li class="overview">
-            <p>David Banner è uno scienziato che lavora per l'esercito ad un progetto per la rigenerazione dei tessuti. Ostacolato nelle sue ricerche, è costretto a farsi da cavia, iniettandosi un siero che lo modifica geneticamente. Gli effetti rimangono latenti in lui ma si trasferiscono nel corredo genetico di suo figlio Bruce. Allontanato dal padre in tenera età, Bruce diviene a sua volta un eminente biologo. In seguito ad un incidente in laboratorio, a causa di una sovraesposizione ai raggi gamma, la "diversità" di Bruce esplode in tutta la sua ferocia, trasformandolo in una creatura verde dotata di una forza incredibile che cresce esponenzialmente col crescere della sua rabbia. Il generale Ross schiera un esercito contro di lui, ma solo sua figlia Betty, collega e fidanzata di Bruce, è capace di fermarlo: la dolcezza è l'unico modo di calmare il mostro e farlo ritornare uomo.</p>
+            <h6>Trama: </h6>
+            <p>Sono passati più di dieci anni da quando, nel corso di una serata in Svizzera, il miliardario genio-e-sregolatezza Tony Stark s'intratteneva con la bella Maya Hansen e lasciava sul tetto, in vana attesa, il visionario Aldrich Killian, desideroso di contare Stark tra le fila degli scienziati da lui diretti. Intanto, dal Medio Oriente, un terrorista senza scrupoli, detto il Mandarino, dopo aver seminato panico e morte in diverse zone degli Stati Uniti d'America, mira sempre più esplicitamente al Presidente, ma passa prima da villa Stark, radendola al suolo. In pena per la sicurezza di Pepper e in preda a crescenti e fino ad ora sconosciuti attacchi di panico, Iron Man si ritrova chiamato all'azione su più fronti, proprio nel momento di massima debolezza.</p>
           </li>
         </ul> 
       </div>
 
       <div class="cover-film">
-        <img classe="cover-img" src="https://image.tmdb.org/t/p/w342//ycxWyYm5li51say11DJziMaCZMz.jpg" alt="Hulk">
-        <ul class="cover-film-details">
+        <img classe="cover-img" src="https://image.tmdb.org/t/p/w342//oqvx02LqhXcdlbFDhbMcuSFxzir.jpg" alt="Avengers - Infinity War">
+        <ul class="cover-film-details hide">
           <li class="title">
-             <span>Titolo: </span>
-             <span>Hulk</span>
+             <h6>Titolo: </h6>
+             <span>Avengers - Infinity War</span>
           </li>
           <li class="original-title">
-            <span>Titolo originale: </span>
-            <span>Hulk</span>
+            <h6>Titolo originale: </h6>
+            <span>Avengers: Infinity War</span>
           </li>
           <li class="original-language">
             <span>Lingua: </span>
@@ -89,28 +95,29 @@
           </li>
           <li class="vote-average">
             <span>Voto: </span>
-            <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span>
+            <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
           </li>
           <li class="tipo-serie">
-            <span>tipo: </span>
+            <h6>tipo: </h6>
             <span>Film</span>
           </li>
           <li class="overview">
-            <p>David Banner è uno scienziato che lavora per l'esercito ad un progetto per la rigenerazione dei tessuti. Ostacolato nelle sue ricerche, è costretto a farsi da cavia, iniettandosi un siero che lo modifica geneticamente. Gli effetti rimangono latenti in lui ma si trasferiscono nel corredo genetico di suo figlio Bruce. Allontanato dal padre in tenera età, Bruce diviene a sua volta un eminente biologo. In seguito ad un incidente in laboratorio, a causa di una sovraesposizione ai raggi gamma, la "diversità" di Bruce esplode in tutta la sua ferocia, trasformandolo in una creatura verde dotata di una forza incredibile che cresce esponenzialmente col crescere della sua rabbia. Il generale Ross schiera un esercito contro di lui, ma solo sua figlia Betty, collega e fidanzata di Bruce, è capace di fermarlo: la dolcezza è l'unico modo di calmare il mostro e farlo ritornare uomo.</p>
+            <h6>Trama: </h6>
+            <p>Dalla nascita dell'universo, sei gemme elementari rappresentano i vari aspetti fondamentali del cosmo e chi le possedesse tutte raggiungerebbe l'onnipotenza. È questo l'obiettivo di Thanos, il titano pazzo che ritiene se stesso come un correttivo alla sovrappopolazione universale e pensa di essere una misura necessaria e giusta, persino benevola, mentre agli altri il suo operato appare, correttamente, come una serie di genocidi. Gli Avengers e i Guardiani della Galassia dovranno cercare di fermarlo, ma come se non bastasse la sua inarrestabile potenza ci sono dalla sua armate aliene e quattro letali "figli", ognuno deciso a consegnargli le gemme dell'infinito.</p>
           </li>
         </ul> 
       </div>
 
       <div class="cover-film">
-        <img classe="cover-img" src="https://image.tmdb.org/t/p/w342//ycxWyYm5li51say11DJziMaCZMz.jpg" alt="Hulk">
-        <ul class="cover-film-details">
+        <img classe="cover-img" src="https://image.tmdb.org/t/p/w342//bv0rFJXde4QQOlRxFNAPpK5yfEI.jpg" alt="Sherlock Holmes">
+        <ul class="cover-film-details hide">
           <li class="title">
-             <span>Titolo: </span>
-             <span>Hulk</span>
+             <h6>Titolo: </h6>
+             <span>Sherlock Holmes</span>
           </li>
           <li class="original-title">
-            <span>Titolo originale: </span>
-            <span>Hulk</span>
+            <h6>Titolo originale: </h6>
+            <span>Sherlock Holmes</span>
           </li>
           <li class="original-language">
             <span>Lingua: </span>
@@ -118,28 +125,29 @@
           </li>
           <li class="vote-average">
             <span>Voto: </span>
-            <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span>
+            <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
           </li>
           <li class="tipo-serie">
-            <span>tipo: </span>
+            <h6>tipo: </h6>
             <span>Film</span>
           </li>
           <li class="overview">
-            <p>David Banner è uno scienziato che lavora per l'esercito ad un progetto per la rigenerazione dei tessuti. Ostacolato nelle sue ricerche, è costretto a farsi da cavia, iniettandosi un siero che lo modifica geneticamente. Gli effetti rimangono latenti in lui ma si trasferiscono nel corredo genetico di suo figlio Bruce. Allontanato dal padre in tenera età, Bruce diviene a sua volta un eminente biologo. In seguito ad un incidente in laboratorio, a causa di una sovraesposizione ai raggi gamma, la "diversità" di Bruce esplode in tutta la sua ferocia, trasformandolo in una creatura verde dotata di una forza incredibile che cresce esponenzialmente col crescere della sua rabbia. Il generale Ross schiera un esercito contro di lui, ma solo sua figlia Betty, collega e fidanzata di Bruce, è capace di fermarlo: la dolcezza è l'unico modo di calmare il mostro e farlo ritornare uomo.</p>
+            <h6>Trama: </h6>
+            <p>Sul finire dell'Ottocento, Londra è una città affascinante e pericolosa. Le novità tecnologiche attirano i cittadini più curiosi, ma il richiamo per l'occulto e il soprannaturale è altrettanto forte. Quando Sherlock Holmes e il fido dottor Watson consegnano l'assassino di giovani donne Lord Blackwood alla giustizia e, dopo aver assistito all'esecuzione capitale, assistono non di meno alla sua apparente resurrezione, Holmes è felice di potersi finalmente interessare di qualcosa alla sua portata. Tanto più che si è ripresentata a lui la bella Irene Adler, chiedendo il ritrovamento di un uomo che si scoprirà interrato nella bara di Blackwood. I casi si intrecciano, si aggrovigliano, sporcano gli abiti di fumo e di avventura.</p>
           </li>
         </ul> 
       </div>
 
       <div class="cover-film">
-        <img classe="cover-img" src="https://image.tmdb.org/t/p/w342//ycxWyYm5li51say11DJziMaCZMz.jpg" alt="Hulk">
-        <ul class="cover-film-details">
+        <img classe="cover-img" src="https://image.tmdb.org/t/p/w342//mxwvoyFXmSIdborPuOZbw1uZFM9.jpg" alt="Pirati dei Caraibi - Ai confini del mondo">
+        <ul class="cover-film-details hide">
           <li class="title">
-             <span>Titolo: </span>
-             <span>Hulk</span>
+             <h6>Titolo: </h6>
+             <span>Pirati dei Caraibi - Ai confini del mondo</span>
           </li>
           <li class="original-title">
-            <span>Titolo originale: </span>
-            <span>Hulk</span>
+            <h6>Titolo originale: </h6>
+            <span>Pirates of the Caribbean: At World's End</span>
           </li>
           <li class="original-language">
             <span>Lingua: </span>
@@ -147,20 +155,29 @@
           </li>
           <li class="vote-average">
             <span>Voto: </span>
-            <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span>
+            <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
           </li>
           <li class="tipo-serie">
-            <span>tipo: </span>
+            <h6>tipo: </h6>
             <span>Film</span>
           </li>
           <li class="overview">
-            <p>David Banner è uno scienziato che lavora per l'esercito ad un progetto per la rigenerazione dei tessuti. Ostacolato nelle sue ricerche, è costretto a farsi da cavia, iniettandosi un siero che lo modifica geneticamente. Gli effetti rimangono latenti in lui ma si trasferiscono nel corredo genetico di suo figlio Bruce. Allontanato dal padre in tenera età, Bruce diviene a sua volta un eminente biologo. In seguito ad un incidente in laboratorio, a causa di una sovraesposizione ai raggi gamma, la "diversità" di Bruce esplode in tutta la sua ferocia, trasformandolo in una creatura verde dotata di una forza incredibile che cresce esponenzialmente col crescere della sua rabbia. Il generale Ross schiera un esercito contro di lui, ma solo sua figlia Betty, collega e fidanzata di Bruce, è capace di fermarlo: la dolcezza è l'unico modo di calmare il mostro e farlo ritornare uomo.</p>
+            <h6>Trama: </h6>
+            <p>Will Turner, Elizabeth Swann e il capitan Barbossa si alleano per liberare il capitano Jack Sparrow imprigionato negli abissi. Nel frattempo, l'Olandese Volante del capitano Davy Jones, controllato dalla Compagnia delle Indie Orientali, semina il terrore per i Sette Mari. Dopo essersi confrontato con il pirata cinese Sao Feng, il gruppo di pirati si spingerà oltre i confini della Terra per partecipare alla gigantesca battaglia finale per il controllo dei mari.</p>
           </li>
         </ul> 
       </div>
+
+
+      
+         
+
+      
+       
+     
     
     
-    </div>
+    </div><!-- fine div film -->
   </main>
 
   
@@ -174,11 +191,11 @@
       <img classe="cover-img" src="{{ posterPath }}" alt="{{title}}">
       <ul class="cover-film-details hide">
         <li class="title">
-           <span>Titolo: </span>
+           <h6>Titolo: </h6>
            <span>{{ title }}</span>
         </li>
         <li class="original-title">
-          <span>Titolo originale: </span>
+          <h6>Titolo originale: </h6>
           <span>{{ originalTitle }}</span>
         </li>
         <li class="original-language">
@@ -190,10 +207,11 @@
           <span>{{{ voteAverage }}}</span>
         </li>
         <li class="tipo-serie">
-          <span>tipo: </span>
+          <h6>tipo: </h6>
           <span>{{ tipoSerie }}</span>
         </li>
         <li class="overview">
+          <h6>Trama: </h6>
           <p>{{ overview }}</p>
         </li>
       </ul> 

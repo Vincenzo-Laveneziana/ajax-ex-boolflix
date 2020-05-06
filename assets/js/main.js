@@ -24,7 +24,10 @@ $(document).ready(function (){
 
   //alla pressione del tasto invio
   inputSearch.keyup(function(event){
+    
+    
     if(event.which === 13){
+      console.log("ok");
       chiamaFunzioni(lista,resultTV,resultFilm,inputSearch,template)
     }
   })
@@ -134,7 +137,8 @@ function coverImg(poster){
   if (poster != null){
     return poster = "https://image.tmdb.org/t/p/w342/" + poster;
   } else{
-    return poster = "assets/img/no-poster.png";
+    //return poster = "assets/img/no-poster.png";
+    return poster = "https://media.giphy.com/media/11gZBGuDnYwdpu/giphy.gif";
   }
 }
 
