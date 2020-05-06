@@ -75,9 +75,9 @@ main{
 .div-search{
   position: relative;
   transition: all 1.5s;
-  width: 50px;
+  width: 155px;
   height: 35px;
-  left: 80%;
+  left: 38%;
   background: white;
   box-sizing: border-box;
   border-radius: 25px;
@@ -94,7 +94,6 @@ input{
   line-height: 20px;
   outline: 0;
   border: 0;
-  display: none;
   font-size: 1em;
   border-radius: 20px;
   padding: 0 10px;
@@ -112,12 +111,14 @@ input{
   text-align: center;
   font-size: 15px;
   transition: all 1s;
+
 }
 
 .div-search:hover{
   width: 200px;
   cursor: pointer;
   left: 20%;
+
 }
 
 .div-search:hover input{
@@ -130,6 +131,14 @@ input{
 }
 
 /* Main */
+.result{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(197, 197, 197);
+  margin-bottom: 20px;
+}
+
 .films{
   display: flex;
   justify-content: center;
@@ -159,11 +168,7 @@ input{
   position: absolute;
   top: 0;
   color: white;
-}
-
-
-.cover-film-details li span{
-  font-size: 15px;
+  overflow: hidden;
 }
 
 .cover-film-details:hover{
@@ -173,16 +178,29 @@ input{
   background: rgba(0, 0, 0, 0.7);
 }
 
-.vote-average{
-  margin: 5px;
+.title{
+  margin: 5px 0;
+}
+
+.tipo-serie span,
+.original-title span,
+.title span{
+  font-size: 13px;
+}
+
+.original-title{
+  margin-bottom: 5px;
+}
+
+.vote-average,
+.original-language{
   display: inline;
   padding: 5px;
 }
 
-.original-language {
-  margin: 5px;
+.vote-average h6,
+.original-language h6{
   display: inline;
-  padding: 5px;
 }
 
 .original-language img{
@@ -191,14 +209,36 @@ input{
 }
 
 .tipo-serie{
-  margin: 5px 0 10px;
+  margin: 5px 0 5px;
 }
 
-.overview p{
-  padding: 5px;
-  font-size: 14px;
-  height: 160px;
-  text-overflow: ellipsis;
+.overview{
+  height: 100%;
+} 
+.overview h6{
+  margin-bottom: 5px;
+} 
+
+.scroll{
+  height: 200px;	
   overflow: hidden;
 }
 
+.scroll p{
+  width: 100%;
+  height: 100%;
+  padding: 0 5px;
+  animation: scroll-up 15s linear infinite;
+}
+
+@keyframes scroll-up {
+ 0%   { 
+ transform: translateY(100%); 
+ }
+ 100% { 
+ transform: translateY(-260%); 
+ }
+} 
+
+
+  

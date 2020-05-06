@@ -25,7 +25,6 @@ $(document).ready(function (){
   //alla pressione del tasto invio
   inputSearch.keyup(function(event){
     
-    
     if(event.which === 13){
       console.log("ok");
       chiamaFunzioni(lista,resultTV,resultFilm,inputSearch,template)
@@ -105,7 +104,6 @@ function print(movie, template, lista, type){
   movie.forEach(function(dati){
 
     var title, originalTitle;
-    var overviewP = dati.overview;
     //overviewP = overviewP.substr(1, 200);
 
     if(type == "Film"){
@@ -123,7 +121,7 @@ function print(movie, template, lista, type){
       originalLanguage: flagLang(dati.original_language),
       voteAverage: votoStelle(dati.vote_average),
       tipoSerie : type,
-      overview : overviewP 
+      overview : trama(dati.overview)
     }
     
     lista.append(template(context));
@@ -131,6 +129,15 @@ function print(movie, template, lista, type){
     
 }//fine print
 
+//inserimento Trama
+function trama(dati) {
+
+  if(dati == ""){
+    return dati = "Nessuna trama disponibile";   
+  } else{
+    return dati
+  }
+}
 // inserimento img cover
 function coverImg(poster){
 
@@ -138,7 +145,7 @@ function coverImg(poster){
     return poster = "https://image.tmdb.org/t/p/w342/" + poster;
   } else{
     //return poster = "assets/img/no-poster.png";
-    return poster = "https://media.giphy.com/media/11gZBGuDnYwdpu/giphy.gif";
+    return poster = "assets/img/no-poster.png";
   }
 }
 
