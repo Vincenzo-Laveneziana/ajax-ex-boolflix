@@ -39,15 +39,21 @@ function chiamaFunzioni(lista,resultTV,resultFilm,inputSearch,template){
  
   if(inputSearch.val() !== "" ){
     pulisciRisultati(lista,resultTV,resultFilm);
-    apiCercaSerieTv(inputSearch,template,lista);
-    apiCercaFilm(inputSearch,template,lista);    
+    /* apiCercaSerieTv(inputSearch,template,lista);
+    apiCercaFilm(inputSearch,template,lista);  */   
+    search(inputSearch,template,lista);
   }else{
     alert("Nessun carattere inserito nella ricerca")
     inputSearch.focus();
   }
 }
 
-//cerca serie tv
+
+/* 
+QUESTE 2 FUNZIONI MOMENTANEAMENTE LE LASCIO COMMENTATE
+*/
+
+/* //cerca serie tv
 function apiCercaSerieTv(inputSearch,template,lista){
  
   console.log("chiamata serie tv");
@@ -109,7 +115,58 @@ function apiCercaFilm (inputSearch,template,lista){
       console.log("Errore Api");
     }
   });//fine chiamata ajax
-}//fine apiCercaFilm 
+}//fine apiCercaFilm  */
+
+
+
+
+function search(inputSearch,template,lista){
+  var query = inputSearch.val().toLowerCase().trim();
+
+  var urlApi = ["movie", "tv"];
+
+  urlApi.forEach(function(urlApi){
+    $.ajax({
+      url: "https://api.themoviedb.org/3/search/" + urlApi,
+      method: "GET",
+      data:{
+        api_key: "676860408bcc47c8ae82c5de9ed14e0e",
+        language: "it-IT",
+        query: query
+      },
+      success: function(res){
+        var movie = res.results;
+  
+        if(movie.length > 0){
+
+          if(urlApi == "movie"){
+            print(movie, template, lista, "Film");   
+          } else if(urlApi == "tv"){
+            print(movie, template, lista,"Serie-tv" );    
+          }
+  
+          
+           
+        }else{
+
+          if(urlApi == "movie"){
+            $(".film-series").text("Nessun film trovato") 
+          } else if(urlApi == "tv"){
+            $(".tv-series").text("Nessuna serie tv trovata") 
+          }
+          
+        }
+  
+      },
+      error: function(){
+        console.log("Errore Api");
+      }
+    });//fine chiamata ajax
+  })
+
+  
+  
+}
 
 
 function print(movie, template, lista, type){
