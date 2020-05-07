@@ -193,13 +193,15 @@ input{
   top: 0;
   color: white;
   overflow: hidden;
+  opacity : 0;
 }
 
 .cover-film-details:hover{
   height: 100%;
   width: 100%;
-  opacity: 1;
   background: rgba(0, 0, 0, 0.7);
+  opacity : 1;
+  transition: opacity 1s;
 }
 
 .title{
