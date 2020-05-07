@@ -31,6 +31,16 @@ $(document).ready(function (){
     }
   })
 
+  //Se uso la variabile coverFilm mouseleave smette di funzionare
+  //al passaggio del mouse sulla copertina fai scrollare l'overview
+  lista.on("mouseenter", ".cover-film", function () {
+    $(this).find(".scroll p").addClass("scroll-p");
+  });
+
+  lista.on("mouseleave", ".cover-film" , function () {
+    $(this).find(".scroll p").removeClass("scroll-p");
+  });
+
 });//fine ready
 
 
@@ -57,7 +67,10 @@ function search(inputSearch,template,lista){
   
   var query = inputSearch.val().toLowerCase().trim();
 
-  var urlApi = ["movie", "tv"];
+  var urlApi = [
+    "movie",
+    "tv"
+  ];
 
   urlApi.forEach(function(urlApi){
     $.ajax({
@@ -86,9 +99,7 @@ function search(inputSearch,template,lista){
           } else if(urlApi == "tv"){
             $(".tv-series").text("Nessuna serie tv trovata") 
           }
-          
         }
-  
       },
       error: function(){
         console.log("Errore Api");
@@ -144,7 +155,6 @@ function coverImg(poster){
   if (poster != null){
     return poster = "https://image.tmdb.org/t/p/w342/" + poster;
   } else{
-    //return poster = "assets/img/no-poster.png";
     return poster = "assets/img/no-poster.png";
   }
 }

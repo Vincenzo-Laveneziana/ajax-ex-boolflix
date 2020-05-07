@@ -224,19 +224,19 @@ input{
   overflow: hidden;
 }
 
-.scroll p{
+.scroll-p{
   width: 100%;
   height: 100%;
   padding: 0 5px;
-  animation: scroll-up 15s linear infinite;
+  animation: scroll-up 20s linear infinite;
 }
 
-@keyframes scroll-up {
- 0%   { 
+@keyframes scroll-up{
+  0%{ 
  transform: translateY(100%); 
  }
- 100% { 
- transform: translateY(-260%); 
+  100%{ 
+ transform: translateY(-250%); 
  }
 } 
 
