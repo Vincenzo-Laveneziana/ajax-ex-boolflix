@@ -15,6 +15,23 @@ main{
   padding: 30px 0;
 }
 
+/* Custom scrollbar */
+/* width */
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 5px;
+}
+
+/* background of the scrollbar except button or resizer */
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* scrollbar itself */
+::-webkit-scrollbar-thumb {
+  background-color:#5a5a5a;
+  border-radius:16px;
+}
 
 /* Utility */
 
@@ -78,10 +95,10 @@ main{
   width: 155px;
   height: 35px;
   left: 38%;
-  background: white;
+  background: #161616;
   box-sizing: border-box;
   border-radius: 25px;
-  border: 4px solid white;
+  border: 4px solid #161616;
   padding: 5px;
 }
 
@@ -97,6 +114,8 @@ input{
   font-size: 1em;
   border-radius: 20px;
   padding: 0 10px;
+  background: #161616;
+  color: white;
 }
 
 .div-search .fa{
@@ -107,18 +126,16 @@ input{
   top: 0;
   right: 0;
   border-radius: 50%;
-  color: #07051a;
+  color: rgb(136, 136, 136);
   text-align: center;
   font-size: 15px;
   transition: all 1s;
-
 }
 
 .div-search:hover{
   width: 200px;
   cursor: pointer;
   left: 20%;
-
 }
 
 .div-search:hover input{
@@ -126,7 +143,7 @@ input{
 }
 
 .div-search:hover .fa{
-  background: #07051a;
+  background: #000000;
   color: white;
 }
 

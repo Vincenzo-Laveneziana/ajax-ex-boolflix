@@ -33,11 +33,11 @@ $(document).ready(function (){
 
   //Se uso la variabile coverFilm mouseleave smette di funzionare
   //al passaggio del mouse sulla copertina fai scrollare l'overview
-  lista.on("mouseenter", ".cover-film", function () {
+  lista.on("mouseenter",".cover-film", function () {  
     $(this).find(".scroll p").addClass("scroll-p");
   });
 
-  lista.on("mouseleave", ".cover-film" , function () {
+  lista.on("mouseleave",".cover-film", function () {   
     $(this).find(".scroll p").removeClass("scroll-p");
   });
 
