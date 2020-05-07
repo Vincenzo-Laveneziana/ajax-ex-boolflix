@@ -16,13 +16,20 @@ $(document).ready(function (){
   var resultFilm = $(".film-series");
   var coverFilm =  $(".cover-film");
   var coverFilmDetails = $(".cover-film-details");
+  var logo = $(".head > img");
 
-  //al click
+
+  //ricarica pagina al click sul logo
+  logo.click(function(){
+    location.reload();
+  })
+
+  //al click sul btn cerca
   btnSearch.click(function(){
     chiamaFunzioni(lista,resultTV,resultFilm,inputSearch,template)
   })
 
-  //alla pressione del tasto invio
+  //alla pressione del tasto invio nella search
   inputSearch.keyup(function(event){
     
     if(event.which === 13){
@@ -31,7 +38,7 @@ $(document).ready(function (){
     }
   })
 
-  //Se uso la variabile coverFilm mouseleave smette di funzionare
+  //Se uso la variabile coverFilm mouse -enter/leave smettono di funzionare perchè richiedono un parametro stringa
   //al passaggio del mouse sulla copertina fai scrollare l'overview
   lista.on("mouseenter",".cover-film", function () {  
     $(this).find(".scroll p").addClass("scroll-p");
@@ -53,12 +60,17 @@ function chiamaFunzioni(lista,resultTV,resultFilm,inputSearch,template){
  
   if(inputSearch.val() !== "" ){
     pulisciRisultati(lista,resultTV,resultFilm);
-    search(inputSearch,template,lista);
+
+    //Uppercase prima lettera della parola cercata
+    $(".searchVal").text("Risultati della ricerca: "+ inputSearch.val().toUpperCase().slice(0,1) + inputSearch.val().slice(1));
+    search(inputSearch,template,lista); 
+    inputSearch.val("");
+    
   }else{
-    alert("Nessun carattere inserito nella ricerca")
+    alert("Nessun carattere inserito nella ricerca");
     inputSearch.focus();
   }
-}
+}// fine chiamaFunzioni
 
 
 //funzione ricerca dei film/serie-tv
@@ -95,9 +107,9 @@ function search(inputSearch,template,lista){
         }else{
 
           if(urlApi == "movie"){
-            $(".film-series").text("Nessun film trovato") 
+            $(".film-series").text("Nessun film trovato");
           } else if(urlApi == "tv"){
-            $(".tv-series").text("Nessuna serie tv trovata") 
+            $(".tv-series").text("Nessuna serie tv trovata");
           }
         }
       },
@@ -157,7 +169,7 @@ function coverImg(poster){
   } else{
     return poster = "assets/img/no-poster.png";
   }
-}
+}//fine trama
 
 //conversione rating in star
 function votoStelle(voto){
@@ -177,7 +189,7 @@ function votoStelle(voto){
   }
 
   return aggiungiStella;
-}
+}//fine votoStelle
 
 //conversione lingua in bandiera
 function flagLang(lingua){
@@ -192,10 +204,10 @@ function flagLang(lingua){
   }
 
   return lingua;
-}
+}//fine flagLang
 
 function pulisciRisultati(contenitore, risultatiTv, risultatiFilm){
   contenitore.html("");
   risultatiTv.html("");
   risultatiFilm.html("");
-}
+}//fine pulisciRisultati
